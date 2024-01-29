@@ -1,7 +1,7 @@
 // Garden Gnome Software - VR - Skin
-// Pano2VR 7.0.6/20004
+// Pano2VR 7.0.8/20017
 // Filename: feather_vr.ggsk
-// Generated 2024-01-17T10:05:03
+// Generated 2024-01-29T12:45:57
 
 function pano2vrVrSkin(player,base) {
 	player.addVariable('node_cloner_vr_hasUp', 2, false, { ignoreInState: 0  });
@@ -598,13 +598,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['page_up_bg']=false;
 			me._page_up_bg.logicBlock_scaling();
 		}
-		me._page_up_bg.ggCurrentLogicStateScaling = -1;
-		me._page_up_bg.ggCurrentLogicStateVisible = -1;
-		me._page_up_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['page_up_bg']) {
-				me.elementMouseOver['page_up_bg']=true;
-			}
-		}
 		me._page_up_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
 		geometry = new THREE.PlaneBufferGeometry(0.42, 0.42, 5, 5 );
@@ -907,13 +900,6 @@ function pano2vrVrSkin(player,base) {
 		me._page_down_bg.userData.onmouseout=function (e) {
 			me.elementMouseOver['page_down_bg']=false;
 			me._page_down_bg.logicBlock_scaling();
-		}
-		me._page_down_bg.ggCurrentLogicStateScaling = -1;
-		me._page_down_bg.ggCurrentLogicStateVisible = -1;
-		me._page_down_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['page_down_bg']) {
-				me.elementMouseOver['page_down_bg']=true;
-			}
 		}
 		me._page_down_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -1340,13 +1326,6 @@ function pano2vrVrSkin(player,base) {
 			me._node_title.logicBlock_alpha();
 			me._node_image.logicBlock_scaling();
 		}
-		me._node_image.ggCurrentLogicStateScaling = -1;
-		me._node_image.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['node_image']) {
-				me.elementMouseOver['node_image']=true;
-				me._node_title.logicBlock_alpha();
-			}
-		}
 		me._node_image.userData.ggUpdatePosition=function (useTransition) {
 		}
 		width = 1.5;
@@ -1764,12 +1743,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_video_url']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
-		me._ht_video_url.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_url']) {
-				player.setActiveHotspot(me.hotspot);
-				me.elementMouseOver['ht_video_url']=true;
-			}
-		}
 		me._ht_video_url.userData.ggUpdatePosition=function (useTransition) {
 		}
 		width = 0.45;
@@ -2046,14 +2019,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_video_url_bg']=false;
 			me._ht_video_url_title.logicBlock_alpha();
 			me._ht_video_url_bg.logicBlock_scaling();
-		}
-		me._ht_video_url_bg.ggCurrentLogicStateScaling = -1;
-		me._ht_video_url_bg.ggCurrentLogicStateAlpha = -1;
-		me._ht_video_url_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_url_bg']) {
-				me.elementMouseOver['ht_video_url_bg']=true;
-				me._ht_video_url_title.logicBlock_alpha();
-			}
 		}
 		me._ht_video_url_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -2903,12 +2868,6 @@ function pano2vrVrSkin(player,base) {
 			me._ht_video_url_popup_close.material = me._ht_video_url_popup_close.userData.materialNormal;
 			me.elementMouseOver['ht_video_url_popup_close']=false;
 		}
-		me._ht_video_url_popup_close.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_url_popup_close']) {
-				me._ht_video_url_popup_close.material = me._ht_video_url_popup_close.userData.materialOver;
-				me.elementMouseOver['ht_video_url_popup_close']=true;
-			}
-		}
 		me._ht_video_url_popup_close.userData.ggUpdatePosition=function (useTransition) {
 		}
 		me._ht_video_url_popup_bg.add(me._ht_video_url_popup_close);
@@ -3043,12 +3002,6 @@ function pano2vrVrSkin(player,base) {
 			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_video_file']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
-		}
-		me._ht_video_file.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_file']) {
-				player.setActiveHotspot(me.hotspot);
-				me.elementMouseOver['ht_video_file']=true;
-			}
 		}
 		me._ht_video_file.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -3326,14 +3279,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_video_file_bg']=false;
 			me._ht_video_file_title.logicBlock_alpha();
 			me._ht_video_file_bg.logicBlock_scaling();
-		}
-		me._ht_video_file_bg.ggCurrentLogicStateScaling = -1;
-		me._ht_video_file_bg.ggCurrentLogicStateAlpha = -1;
-		me._ht_video_file_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_file_bg']) {
-				me.elementMouseOver['ht_video_file_bg']=true;
-				me._ht_video_file_title.logicBlock_alpha();
-			}
 		}
 		me._ht_video_file_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -4186,12 +4131,6 @@ function pano2vrVrSkin(player,base) {
 			me._ht_video_file_popup_close.material = me._ht_video_file_popup_close.userData.materialNormal;
 			me.elementMouseOver['ht_video_file_popup_close']=false;
 		}
-		me._ht_video_file_popup_close.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_video_file_popup_close']) {
-				me._ht_video_file_popup_close.material = me._ht_video_file_popup_close.userData.materialOver;
-				me.elementMouseOver['ht_video_file_popup_close']=true;
-			}
-		}
 		me._ht_video_file_popup_close.userData.ggUpdatePosition=function (useTransition) {
 		}
 		me._ht_video_file_popup_bg.add(me._ht_video_file_popup_close);
@@ -4326,12 +4265,6 @@ function pano2vrVrSkin(player,base) {
 			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_info']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
-		}
-		me._ht_info.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_info']) {
-				player.setActiveHotspot(me.hotspot);
-				me.elementMouseOver['ht_info']=true;
-			}
 		}
 		me._ht_info.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -4608,14 +4541,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_info_bg']=false;
 			me._ht_info_title.logicBlock_alpha();
 			me._ht_info_bg.logicBlock_scaling();
-		}
-		me._ht_info_bg.ggCurrentLogicStateScaling = -1;
-		me._ht_info_bg.ggCurrentLogicStateAlpha = -1;
-		me._ht_info_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_info_bg']) {
-				me.elementMouseOver['ht_info_bg']=true;
-				me._ht_info_title.logicBlock_alpha();
-			}
 		}
 		me._ht_info_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -5620,12 +5545,6 @@ function pano2vrVrSkin(player,base) {
 			me._ht_info_popup_close.material = me._ht_info_popup_close.userData.materialNormal;
 			me.elementMouseOver['ht_info_popup_close']=false;
 		}
-		me._ht_info_popup_close.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_info_popup_close']) {
-				me._ht_info_popup_close.material = me._ht_info_popup_close.userData.materialOver;
-				me.elementMouseOver['ht_info_popup_close']=true;
-			}
-		}
 		me._ht_info_popup_close.userData.ggUpdatePosition=function (useTransition) {
 		}
 		me._ht_info_popup_bg.add(me._ht_info_popup_close);
@@ -5756,12 +5675,6 @@ function pano2vrVrSkin(player,base) {
 			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_image']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
-		}
-		me._ht_image.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_image']) {
-				player.setActiveHotspot(me.hotspot);
-				me.elementMouseOver['ht_image']=true;
-			}
 		}
 		me._ht_image.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -6038,14 +5951,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_image_bg']=false;
 			me._ht_image_title.logicBlock_alpha();
 			me._ht_image_bg.logicBlock_scaling();
-		}
-		me._ht_image_bg.ggCurrentLogicStateScaling = -1;
-		me._ht_image_bg.ggCurrentLogicStateAlpha = -1;
-		me._ht_image_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_image_bg']) {
-				me.elementMouseOver['ht_image_bg']=true;
-				me._ht_image_title.logicBlock_alpha();
-			}
 		}
 		me._ht_image_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -6963,12 +6868,6 @@ function pano2vrVrSkin(player,base) {
 			me._ht_image_popup_close.material = me._ht_image_popup_close.userData.materialNormal;
 			me.elementMouseOver['ht_image_popup_close']=false;
 		}
-		me._ht_image_popup_close.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_image_popup_close']) {
-				me._ht_image_popup_close.material = me._ht_image_popup_close.userData.materialOver;
-				me.elementMouseOver['ht_image_popup_close']=true;
-			}
-		}
 		me._ht_image_popup_close.userData.ggUpdatePosition=function (useTransition) {
 		}
 		me._ht_image_popup_bg.add(me._ht_image_popup_close);
@@ -7098,12 +6997,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_node']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
-		me._ht_node.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_node']) {
-				player.setActiveHotspot(me.hotspot);
-				me.elementMouseOver['ht_node']=true;
-			}
-		}
 		me._ht_node.userData.ggUpdatePosition=function (useTransition) {
 		}
 		width = 0.45;
@@ -7224,13 +7117,6 @@ function pano2vrVrSkin(player,base) {
 			me.elementMouseOver['ht_node_bg']=false;
 			me._ht_node_image.logicBlock_alpha();
 			me._ht_node_image.logicBlock_scaling();
-		}
-		me._ht_node_bg.userData.ggUpdateConditionTimer=function () {
-			if (me.elementMouseOver['ht_node_bg']) {
-				me.elementMouseOver['ht_node_bg']=true;
-				me._ht_node_image.logicBlock_alpha();
-				me._ht_node_image.logicBlock_scaling();
-			}
 		}
 		me._ht_node_bg.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -7914,8 +7800,6 @@ function pano2vrVrSkin(player,base) {
 	me.skinTimerEvent=function() {
 	if (!player.isInVR()) return;
 		me.ggCurrentTime=new Date().getTime();
-		me._page_up_bg.userData.ggUpdateConditionTimer();
-		me._page_down_bg.userData.ggUpdateConditionTimer();
 	};
 	player.addListener('timer', me.skinTimerEvent);
 	player.addListener('entervr', function() { me.addSkin(); player.triggerEvent('changenode'); });

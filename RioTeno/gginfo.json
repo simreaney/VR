@@ -3,7 +3,6 @@
 	"type": "panorama",
 	"external": {
 		"js": [
-			"https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyA_yVYqPqjFuFwfI-YBESiNaG1u_y8afvo",
 			"webxr/three.min.js",
 			"webxr/webxr-polyfill.min.js"
 		],
@@ -18,7 +17,7 @@
 	"player": {
 		"js": "pano2vr_player.js"
 	},
-	"creationdate": "2024-01-17T10:05:03.569Z",
+	"creationdate": "2024-01-29T12:46:06.424Z",
 	"configuration": "pano.xml",
 	"preview": {
 		"img": "preview.jpg",
