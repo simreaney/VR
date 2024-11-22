@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.1.6/20966
 // Filename: SMR_VR_Tour.ggsk
-// Generated 2024-11-22T13:04:07
+// Generated 2024-11-22T13:07:21
 
 function pano2vrSkin(player,base) {
 	player.addVariable('opt_thumbnail_menu_tooltip', 2, true, { ignoreInState: 1  });
