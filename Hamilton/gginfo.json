@@ -12,11 +12,13 @@
 	"skin": {
 		"js": "skin.js"
 	},
-	"vrskin": {},
+	"vrskin": {
+		"js": "skin_vr.js"
+	},
 	"player": {
 		"js": "pano2vr_player.js"
 	},
-	"creationdate": "2024-11-25T15:55:28.595Z",
+	"creationdate": "2024-11-27T11:16:49.646Z",
 	"configuration": "pano.xml",
 	"preview": {
 		"img": "preview.jpg",
