@@ -1,7 +1,7 @@
 // Garden Gnome Software - VR - Skin
-// Pano2VR 7.1.6/20966
+// Pano2VR 7.1.11/21010
 // Filename: feather_vr_SMR.ggsk
-// Generated 2024-11-27T11:16:46
+// Generated 2026-03-12T11:22:41
 
 function pano2vrVrSkin(player,base) {
 	player.addVariable('node_cloner_vr_hasUp', 2, false, { ignoreInState: 0  });
@@ -1923,7 +1923,7 @@ function pano2vrVrSkin(player,base) {
 		geometry.uvsNeedUpdate = true;
 		loader = new THREE.TextureLoader();
 		el.userData.ggNodeId=nodeId;
-		texture = loader.load(basePath + 'images_vr/node_image_' + nodeId + '.webp');
+		texture = loader.load(basePath + 'images_vr/node_image_' + nodeId + '.png');
 		texture.colorSpace = player.getVRTextureColorSpace();
 		material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide, transparent: true} );
 		material.name = 'node_image_material';
@@ -2511,9 +2511,9 @@ function pano2vrVrSkin(player,base) {
 			player.triggerEvent('hsproxyover', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
 		me._ht_video_url.userData.onmouseleave=function (e) {
-			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_video_url']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
+			player.setActiveHotspot(null);
 		}
 		me._ht_video_url.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -2732,7 +2732,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_url_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -3294,7 +3294,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_url_popup_bg.logicBlock_scaling = function() {
 			var newLogicStateScaling;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateScaling = 0;
@@ -3376,7 +3376,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_url_popup_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -3551,7 +3551,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_url_popup.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -3773,7 +3773,7 @@ function pano2vrVrSkin(player,base) {
 			var newLogicStateVisible;
 			if (
 				((me.hotspot.customimage == "")) || 
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -3961,9 +3961,9 @@ function pano2vrVrSkin(player,base) {
 			player.triggerEvent('hsproxyover', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
 		me._ht_video_file.userData.onmouseleave=function (e) {
-			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_video_file']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
+			player.setActiveHotspot(null);
 		}
 		me._ht_video_file.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -4182,7 +4182,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_file_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -4744,7 +4744,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_file_popup_bg.logicBlock_scaling = function() {
 			var newLogicStateScaling;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateScaling = 0;
@@ -4826,7 +4826,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_file_popup_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -5001,7 +5001,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_video_file_popup.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -5226,7 +5226,7 @@ function pano2vrVrSkin(player,base) {
 			var newLogicStateVisible;
 			if (
 				((me.hotspot.customimage == "")) || 
-				(((player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_video_hs') !== null) && (player.getVariableValue('open_video_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -5414,9 +5414,9 @@ function pano2vrVrSkin(player,base) {
 			player.triggerEvent('hsproxyover', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
 		me._ht_info.userData.onmouseleave=function (e) {
-			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_info']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
+			player.setActiveHotspot(null);
 		}
 		me._ht_info.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -5635,7 +5635,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_info_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_image_hs') !== null) && (player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -6199,7 +6199,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_info_popup_bg.logicBlock_scaling = function() {
 			var newLogicStateScaling;
 			if (
-				(((player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_info_hs') !== null) && (player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateScaling = 0;
@@ -6281,7 +6281,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_info_popup_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_info_hs') !== null) && (player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -6830,7 +6830,7 @@ function pano2vrVrSkin(player,base) {
 			var newLogicStateVisible;
 			if (
 				((me.hotspot.customimage == "")) || 
-				(((player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_info_hs') !== null) && (player.getVariableValue('open_info_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -7014,9 +7014,9 @@ function pano2vrVrSkin(player,base) {
 			player.triggerEvent('hsproxyover', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
 		me._ht_image.userData.onmouseleave=function (e) {
-			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_image']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
+			player.setActiveHotspot(null);
 		}
 		me._ht_image.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -7235,7 +7235,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_image_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_image_hs') !== null) && (player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -7798,7 +7798,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_image_popup_bg.logicBlock_scaling = function() {
 			var newLogicStateScaling;
 			if (
-				(((player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_image_hs') !== null) && (player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateScaling = 0;
@@ -7880,7 +7880,7 @@ function pano2vrVrSkin(player,base) {
 		me._ht_image_popup_bg.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				(((player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_image_hs') !== null) && (player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateAlpha = 0;
@@ -8345,7 +8345,7 @@ function pano2vrVrSkin(player,base) {
 			var newLogicStateVisible;
 			if (
 				((me.hotspot.customimage == "")) || 
-				(((player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
+				(((player.getVariableValue('open_image_hs') !== null) && (player.getVariableValue('open_image_hs')).indexOf("<"+me.hotspot.id+">") != -1))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -8527,9 +8527,9 @@ function pano2vrVrSkin(player,base) {
 			player.triggerEvent('hsproxyover', {'id': me.hotspot.id, 'url': me.hotspot.url});
 		}
 		me._ht_node.userData.onmouseleave=function (e) {
-			player.setActiveHotspot(null);
 			me.elementMouseOver['ht_node']=false;
 			player.triggerEvent('hsproxyout', {'id': me.hotspot.id, 'url': me.hotspot.url});
+			player.setActiveHotspot(null);
 		}
 		me._ht_node.userData.ggUpdatePosition=function (useTransition) {
 		}
@@ -8789,7 +8789,7 @@ function pano2vrVrSkin(player,base) {
 		geometry.uvsNeedUpdate = true;
 		loader = new THREE.TextureLoader();
 		el.userData.ggNodeId=nodeId;
-		texture = loader.load(basePath + 'images_vr/ht_node_image_' + nodeId + '.webp');
+		texture = loader.load(basePath + 'images_vr/ht_node_image_' + nodeId + '.png');
 		texture.colorSpace = player.getVRTextureColorSpace();
 		material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide, transparent: true} );
 		material.name = 'ht_node_image_material';
