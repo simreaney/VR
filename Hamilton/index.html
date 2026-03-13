@@ -34,26 +34,7 @@
 			}
 		</style>
 	</head>
-	<script>
-// This forces the iPad to ask for permission on the very first tap of the screen.
-(function() {
-    var checkGyro = function() {
-        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-            DeviceOrientationEvent.requestPermission()
-                .then(function(permissionState) {
-                    if (permissionState === 'granted') {
-                        // Permission granted, Pano2VR can now use the sensors.
-                        window.removeEventListener('click', checkGyro);
-                        window.removeEventListener('touchend', checkGyro);
-                    }
-                })
-                .catch(console.error);
-        }
-    };
-    window.addEventListener('click', checkGyro);
-    window.addEventListener('touchend', checkGyro);
-})();
-</script>
+
 	<body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
 		<script type="text/javascript" src="pano2vr_player.js?ts=2712843">
@@ -109,5 +90,34 @@
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+<script>
+(function() {
+    var isTriggered = false;
+    var requestGyro = function() {
+        if (isTriggered) return;
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(function(permissionState) {
+                    if (permissionState === 'granted') {
+                        isTriggered = true;
+                        // This "pings" the Pano2VR player to refresh its sensor data
+                        if (typeof pano !== 'undefined') {
+                            pano.setVariable('gyro_available', true);
+                            // If you have a gyro button, this simulates clicking it "ON"
+                            if (pano.getViewer().setGyroEnabled) {
+                                pano.getViewer().setGyroEnabled(true);
+                            }
+                        }
+                        console.log("Gyro unlocked and Pano2VR alerted.");
+                    }
+                })
+                .catch(console.error);
+        }
+    };
+    // Listen for the very first touch anywhere
+    window.addEventListener('touchstart', requestGyro);
+    window.addEventListener('click', requestGyro);
+})();
+</script>
 	</body>
 </html>
