@@ -34,6 +34,26 @@
 			}
 		</style>
 	</head>
+	<script>
+// This forces the iPad to ask for permission on the very first tap of the screen.
+(function() {
+    var checkGyro = function() {
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(function(permissionState) {
+                    if (permissionState === 'granted') {
+                        // Permission granted, Pano2VR can now use the sensors.
+                        window.removeEventListener('click', checkGyro);
+                        window.removeEventListener('touchend', checkGyro);
+                    }
+                })
+                .catch(console.error);
+        }
+    };
+    window.addEventListener('click', checkGyro);
+    window.addEventListener('touchend', checkGyro);
+})();
+</script>
 	<body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
 		<script type="text/javascript" src="pano2vr_player.js?ts=2712843">
