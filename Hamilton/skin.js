@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.1.11/21010
 // Filename: VR_Tour_w_Map.ggsk
-// Generated 2026-03-12T17:08:06
+// Generated 2026-03-13T10:49:10
 
 function pano2vrSkin(player,base) {
 	player.addVariable('opt_thumbnail_menu_tooltip', 2, true, { ignoreInState: 1  });
@@ -223,7 +223,7 @@ function pano2vrSkin(player,base) {
 		hs+='height : 49px;';
 		hs+='opacity : 0.9;';
 		hs+='position : absolute;';
-		hs+='right : 23px;';
+		hs+='right : 24px;';
 		hs+='visibility : inherit;';
 		hs+='width : 120px;';
 		hs+='pointer-events:auto;';
@@ -237,40 +237,11 @@ function pano2vrSkin(player,base) {
 		}
 		me._image_2.onclick=function (e) {
 			player.enterVR();
+			player.setUseGyro(true);
 		}
 		me._image_2.ggUpdatePosition=function (useTransition) {
 		}
 		me.divSkin.appendChild(me._image_2);
-		el=me._thumbnail0=document.createElement('div');
-		el.ggPermeable=false;
-		el.ggId="thumbnail";
-		el.ggDx=12;
-		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
-		el.ggVisible=true;
-		el.className="ggskin ggskin_container ";
-		el.ggType='container';
-		hs ='';
-		hs+='bottom : 91px;';
-		hs+='height : 24px;';
-		hs+='left : calc(50% - ((32px + 0px) / 2) + 12px);';
-		hs+='position : absolute;';
-		hs+='visibility : inherit;';
-		hs+='width : 32px;';
-		hs+='pointer-events:auto;';
-		el.setAttribute('style',hs);
-		el.style.transformOrigin='50% 50%';
-		me._thumbnail0.ggIsActive=function() {
-			return false;
-		}
-		el.ggElementNodeId=function() {
-			return player.getCurrentNode();
-		}
-		me._thumbnail0.onclick=function (e) {
-			player.setVariableValue('vis_thumbnail_menu', !player.getVariableValue('vis_thumbnail_menu'));
-		}
-		me._thumbnail0.ggUpdatePosition=function (useTransition) {
-		}
-		me.divSkin.appendChild(me._thumbnail0);
 		el=me._button_fullscreen=document.createElement('div');
 		el.ggId="button_fullscreen";
 		el.ggDx=16;
